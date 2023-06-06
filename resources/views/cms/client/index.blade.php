@@ -31,13 +31,14 @@
                                 @foreach ($clients as $client)
                                     <tr>
 
-                                        <td>
+                                       
+                                        <td>{{ $client->title }}</td>
+                                        <td>{{ $client->mini_title }}</td>
+                                         <td>
                                             @if ($client->image)
                                                 <img src="../assets/img/client/{{ $client->image }}" width="100">
                                             @endif
                                         </td>
-                                        <td>{{ $client->title }}</td>
-                                        <td>{{ $client->mini_title }}</td>
                                         <td>
                                             <a href="{{ route('editClient', $client->id) }}"
                                                 class="btn btn-outline-dark">Edit </a>

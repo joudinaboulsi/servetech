@@ -248,7 +248,7 @@ Route::group(
         )->name('storePortfolioImage');
         // edit
 
-        Route::get('/edit/{id}', 'PortfolioController@edit_image')->name(
+        Route::get('/edit-image/{id}', 'PortfolioController@edit_image')->name(
             'editPortfolioImage'
         );
 

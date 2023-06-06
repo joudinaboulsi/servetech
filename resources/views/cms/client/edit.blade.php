@@ -12,9 +12,9 @@
                     <div class="card-body">
                         <div class="col-md-6">
 
-                            <form action="{{ route('updateClient', $client->id) }}" enctype="multipart/form-data">
+                            <form   method="POST" action="{{ route('updateClient', $client->id) }}" enctype="multipart/form-data">
                                 @csrf
-                                @method('patch')
+                            
                                 <div>
                                     <label for="defaultFormControlInput" class="form-label">Title</label>
                                     <input type="text" name="title" class="form-control" id="defaultFormControlInput"

@@ -765,7 +765,7 @@
                           @foreach($clients as $client)
                             <div class="col-lg-12">
                                 <div class="client-box">
-                                    <div class="ttm-client-logo-tooltip" data-tooltip="{{$client->title}}">
+                                    <div class="ttm-client-logo-tooltip" data-tooltip="{{$client->mini_title}}">
                                         <div class="client-thumbnail">
                                             @if(!empty($client->image))
                                             <img class="img-fluid auto_size" width="160" height="98" src="../assets/img/client/{{$client->image}}" alt="{{$client->title}}">

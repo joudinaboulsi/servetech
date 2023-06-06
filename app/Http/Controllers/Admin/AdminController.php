@@ -150,13 +150,11 @@ class AdminController extends Controller
          $filename='';
         if ($request->hasFile('brochure') ) {
              $file = $request->file('brochure');
-            $filename =time().$file->getClientOriginalName();
-           
+            $filename =time() . $file->getClientOriginalName();
             $file->move('assets', $filename);
         }
         
-      
-     
+
         Settings::where('id', $id)->update([
             'phone_one' => $request->phone_one,
             'phone_two' => $request->phone_two,
@@ -164,12 +162,11 @@ class AdminController extends Controller
             'address' => $request->address,
             'working_days' => $request->working_days,
             'working_hours' => $request->working_hours,
-              'days_closed' => $request->closed_days,
+            'days_closed' => $request->closed_days,
             'closed' => $request->closed,
             'map' => $request->map,
             'brochure' => $filename,
             'updated_at' => Carbon::now(),
-
         ]);
         
         toastr()->success('Data has been updated successfully!');
