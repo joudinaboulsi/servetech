@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="col-md-12">
 
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('update_page',$page->id)}}" enctype="multipart/form-data">
                                 @csrf
 
                                  <div class="mb-3 mt-4">
