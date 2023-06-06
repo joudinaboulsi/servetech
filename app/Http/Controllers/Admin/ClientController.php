@@ -72,13 +72,11 @@ class ClientController extends Controller
 
         $client = CLient::where('id', $id)->update([
             'title' => $request->title,
-              'mini_title' => $request->mini_title,
+            'mini_title' => $request->mini_title,
             'image' => $newPhoto,
             'updated_at' => Carbon::now(),
-
         ]);
         toastr()->success('Data has been updated successfully!');
-
         return redirect()->route('clients');
     }
 }

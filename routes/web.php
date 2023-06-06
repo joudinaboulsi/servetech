@@ -3,15 +3,10 @@
 ############# Frontend #######################################
 
 Route::get('/', 'PagesController@home')->name('home_path');
-// Route::get('/', 'PagesController@about');
-// Route::get('/', 'PagesController@about');
-// Route::get('/portfolio', 'PagesController@portfolio');
-
+Route::post('get-in-touch','PagesController@getContactForm')->name('contactStore');
 ############# Frontend #######################################
 
 Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
 
 // Auth::routes(['register' => false]);
 
@@ -19,21 +14,21 @@ Route::group(
     ['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'],
     function () {
 
-
-        Route::get('', 'AdminController@index')->name('admin');
-         #############  Page Seo  #######################################
+        Route::get('', 'AdminController@dsashboard')->name('admin');
+        ##################  Page Seo  #######################################
+        
         //  list
-          Route::get('pages-seo', 'AdminController@pages')->name('pages');
+          Route::get('/pages-seo', 'AdminController@index')->name('pages');
         // create
-        Route::get('seo/create', 'AdminController@Page_create')->name('create_page');
+        Route::get('/create-seo', 'AdminController@create')->name('createPageSeo');
         // store
         Route::post('pages-seo/store', 'AdminController@store')->name('store_page');
         // edit
-        Route::get('pages-seo/{id}/edit', 'AdminController@edit')->name('edit_page');
+        Route::get('/edit-seo-{id}', 'AdminController@edit')->name('editPage');
         // update
         Route::post('pages-seo/{id}/update', 'AdminController@update')->name('update_page');
         
-          ############# Page Seo  #######################################
+         ############# Page Seo  #######################################
 
 
         ############# HomeSlider #######################################

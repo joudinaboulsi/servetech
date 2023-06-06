@@ -45,6 +45,7 @@ class AboutController extends Controller
             );
             $photoLogo->move('assets/img/logo', $newLogo);
         }
+
         $about = About::insert([
             'title' => $request->title,
             'content_one' => $request->content_one,
@@ -54,6 +55,7 @@ class AboutController extends Controller
             'counter' => $request->counter,
             'counter_title' => $request->counter_title,
         ]);
+
         toastr()->success('Data has been saved successfully!');
 
         return redirect()->route('about');
@@ -105,6 +107,7 @@ class AboutController extends Controller
             'updated_at' => Carbon::now(),
 
         ]);
+        
         toastr()->success('Data has been updated successfully!');
 
         return redirect()->route('about');

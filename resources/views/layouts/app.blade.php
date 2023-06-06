@@ -900,7 +900,7 @@
                                         </div><!-- section-title end -->
                                     </div>
                                     <div class="col-lg-6">
-                                        <form id='contact_form' method="post" action="/" class='request_qoute_form wrap-form clearfix'>
+                                        <form id='contact_form' method="post" action="{{route('contactStore')}}" class='request_qoute_form wrap-form clearfix'>
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6">

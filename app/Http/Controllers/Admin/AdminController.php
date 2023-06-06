@@ -10,20 +10,20 @@ use Carbon\Carbon;
 class AdminController extends Controller
 {
     //index
-    public function index()
+    public function dsashboard()
     {
         return view('cms.dashboard');
     }
 
-    public function pages()
+    public function index()
     {
         $pages = Page::all();
-        return view('cms.pages_seo.index', compact('pages'));
+        return view('cms.pages.index', compact('pages'));
     }
 
     // create
-    public function Page_create(){
-        return view('cms.pages_seo.create');
+    public function create(){
+        return view('cms.pages.create');
     }
 
     // store
@@ -39,8 +39,7 @@ class AdminController extends Controller
             $photo->move('assets/img/page', $newPhoto);
         }
 
-        
-        $page = Page::insert([
+            Page::insert([
             'page_name' => $request->page_name,
             'meta_title' => $request->meta_title,
             'image' => $newPhoto,
@@ -49,8 +48,8 @@ class AdminController extends Controller
              'updated_at' => Carbon::now(),
          
         ]);
+        
         toastr()->success('Data has been saved successfully!');
-
         return redirect()->route('pages');
 
      }
@@ -58,10 +57,12 @@ class AdminController extends Controller
 
     public function edit($id)
     {
-        $page = Page::where('id', $id)->get();
-        $page = $page[0];
-        return view('cms.pages_seo.edit', compact('page'));
+        $page = Page::find($id);
+        return view('cms.pages.edit', compact('page'));
     }
+
+
+    // update
     public function update(Request $request,$id){
 
            $newPhoto = '';
@@ -75,7 +76,6 @@ class AdminController extends Controller
             $photo->move('assets/img/page', $newPhoto);
         }
 
-        
         $page = Page::where('id',$id)->update([
             'page_name' => $request->page_name,
             'meta_title' => $request->meta_title,
@@ -85,11 +85,9 @@ class AdminController extends Controller
              'updated_at' => Carbon::now(),
          
         ]);
+
         toastr()->success('Data has been saved successfully!');
-
         return redirect()->route('pages');
-
-
     }
 
 

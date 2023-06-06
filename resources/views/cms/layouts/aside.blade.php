@@ -28,8 +28,6 @@
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Layouts">Pages & SEO</div>
             </a>
-
-
         </li>
 
         <li class="menu-header small text-uppercase">
@@ -40,47 +38,44 @@
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Home Slider</div>
             </a>
-
         </li>
         <li class="menu-item">
             <a href="{{ route('about') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">About</div>
             </a>
 
         </li>
         <li class="menu-item">
             <a href="{{ route('clients') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Clients</div>
             </a>
-
         </li>
 
         <li class="menu-item">
             <a href="{{ route('SectionOne') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Section One</div>
             </a>
-
         </li>
         <li class="menu-item">
             <a href="{{ route('SectionTwo') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Section Two</div>
             </a>
 
         </li>
         <li class="menu-item">
             <a href="{{ route('portfolioPage') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Portfolio</div>
             </a>
 
         </li>
         <li class="menu-item">
             <a href="{{ route('PortfolioImage') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Portfilio Images</div>
             </a>
 
@@ -124,7 +119,7 @@
         <!-- Extended components -->
         <li class="menu-item">
             <a href="{{ route('settings') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-copy"></i>
+                   <i class="bx bx-cog me-2"></i>
                 <div data-i18n="Extended UI">Settings</div>
             </a>
 
@@ -134,11 +129,10 @@
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="menu-link">
                 <i class="bx bx-power-off me-2"></i>
                 <div data-i18n="Support">Logout</div>
-                
-                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                      style="display: none;">
                                      @csrf
-                                 </form>
+                 </form>
             </a>
         </li>
 
