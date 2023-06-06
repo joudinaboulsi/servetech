@@ -100,7 +100,7 @@
                                     <div class="mb-3 mt-3">
                                         <label for="formFile" class="form-label">Brochure</label>
 @if($settings->brochure)
-<embed name="plugin" src="../assets/{{ $settings->brochure }}" type="application/pdf">
+<embed name="brochure" src="../assets/{{ $settings->brochure }}" type="application/pdf">
                                           
 @endif
                                         <input class="form-control" type="file" name="brochure"
