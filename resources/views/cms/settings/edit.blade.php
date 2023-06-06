@@ -72,7 +72,7 @@
                                     <div class="mb-3 mt-3">
                                         <label for="defaultFormControlInput" class="form-label">closed days </label>
                                         <input type="text" name="closed_days" class="form-control"
-                                            id="defaultFormControlInput" value="{{ $settings->closed_days }}"
+                                            id="defaultFormControlInput" value="{{ $settings->days_closed}}"
                                             aria-describedby="defaultFormControlHelp" />
                                     </div>
                                 </div>
