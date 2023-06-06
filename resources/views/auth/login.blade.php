@@ -10,8 +10,8 @@
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
                             <a href="index.html" class="app-brand-link gap-2">
-                                <img src="../assets/img/logo.svg" alt="" srcset="">
-                                <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                                <img src="/assets/img/logo.svg" alt="" srcset="">
+                                <span class="app-brand-text demo text-body fw-bolder">ServerTech Pro</span>
                             </a>
                         </div>
                         <!-- /Logo -->
