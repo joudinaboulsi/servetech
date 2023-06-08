@@ -30,7 +30,7 @@ class SectionsController extends Controller
                 '-',
                 time() . $photo->getClientOriginalName()
             );
-            $photo->move('assets/img/about', $newPhoto);
+            $photo->move('assets/img/section1', $newPhoto);
         }
 
         $newLogo = '';

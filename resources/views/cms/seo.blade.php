@@ -31,6 +31,7 @@
                                        value="{{$page->meta_keywords}}"  aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-4">
+                                    <label for="defaultFormControlInput" class="form-label">Meta Description</label>
                                      
                                         <textarea class="form-control" name="meta_description" aria-label="With textarea"  id="editor">{!! $page->meta_description!!}</textarea>
                                    

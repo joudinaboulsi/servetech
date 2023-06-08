@@ -46,9 +46,10 @@
                                                 href="{{ route('editHomeSlider', $home_slider->id) }}">Edit</a>
                                               
                                              
-                                               <form method="post" action="{{route('deleteHomeSlider', $home_slider->id)}}">
-                                                        @method('delete')
+                                               <form  action="{{route('deleteHomeSlider', $home_slider->id)}}"  method="post">
+                                                      
                                                         @csrf
+                                                        @method('delete')
                                                 <button type="submit" class="btn btn-outline-danger" style=" margin:0 5px">Delete</button>
                                                 </form>
                                         

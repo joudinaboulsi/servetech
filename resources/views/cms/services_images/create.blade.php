@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="col-12">
 
-                            <form method="POST" action="{{ route('storeServiceImage') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('imageStore') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 <div>
@@ -22,9 +22,9 @@
                                 </div>
                               
                                 <div class="mb-3 mt-4">
-                                
+                                <label for="defaultFormControlInput" class="form-label">SubTitle</label>
                                      
-                                        <textarea class="form-control" name="subtitle" aria-label="With textarea" placeholder="Subtitle" ></textarea>
+                                        <textarea class="form-control" name="subtitle" aria-label="With textarea"></textarea>
                                    
                                 </div>
 

@@ -11,7 +11,7 @@
                     <div class="card-body">
 
                         <div class="demo-inline-spacing">
-                            <a href="{{ route('createrviceImage') }}" class="btn btn-outline-primary">Add </a>
+                            <a href="{{ route('createServiceImage') }}" class="btn btn-outline-primary">Add </a>
 
                         </div>
                     </div>
@@ -38,11 +38,18 @@
                                             @endif
                                         </td>
                                        
-                                        <td>
+                                        <td style="display:flex">
                                             <a class="btn btn-outline-dark"
                                                 href="{{ route('editServiceImage', $service->id) }}">Edit</a>
+                                                <form action="{{route('deleteImage', $service->id)}}" method="POST">
+                                                
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-outline-danger" style=" margin:0 5px">Delete</button>
+                                                </form>
                                            
                                         </td>
+
+                                        
                                     </tr>
                                 @endforeach
                             </tbody>

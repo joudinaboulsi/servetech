@@ -18,14 +18,12 @@ class ServiceController extends Controller
 
     
     // update
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         ServicePage::where('id','1')->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'updated_at' => Carbon::now(),
-
-
         ]);
 
         toastr()->success('Data has been updated successfully!');

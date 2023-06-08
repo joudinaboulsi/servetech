@@ -14,9 +14,12 @@ use App\Service;
 use App\SectionOne;
 use App\SectionTwo;
 use App\Settings;
+use App\Page;
+use App\ServicePage;
 use SEO;
 use SEOMeta;
 use Mail;
+
 
 class PagesController extends Controller
 {
@@ -41,8 +44,7 @@ class PagesController extends Controller
         SEO::opengraph()->setUrl($url);
         SEO::setCanonical($url);
         SEO::opengraph()->addProperty('type','article');  
-        SEO::twitter()->setSite('@'.app('contact')->twitter);
-
+    
         if($page_data->image != NULL) // check if we have an OG image
             SEO::addImages(getenv('APP_URL').'/assets/img/page/'.$page_data->image); 
     }
@@ -51,6 +53,8 @@ class PagesController extends Controller
     //home pgae
     public function home()
     {
+          $page_data = Page::where('id','3')->get();
+        
         $home_slides = HomeSlider::all();
         $about = About::all();
         $portfolio = PortfolioPage::get();
@@ -59,10 +63,11 @@ class PagesController extends Controller
         $contact = Contact::get();
         $footer = Footer::get();
         $services_images= Service::get();
+        $services_pages= ServicePage::get();
         $section_one = SectionOne::get();
         $section_two = SectionTwo::get();
         $settings = Settings::get();
-      return view('layouts.app', compact('home_slides','about','portfolio','portfolio_image','clients','contact','footer','services_images','section_one','section_two','settings'));
+      return view('layouts.app', compact('page_data','home_slides','about','portfolio','portfolio_image','clients','contact','footer','services_images','section_one','section_two','settings','services_pages'));
    
     }
 

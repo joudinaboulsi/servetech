@@ -30,6 +30,32 @@ Route::post('/section-two/update','SectionsController@update_section_two')->name
    Route::post('update-settings','SettingsController@update_settings')->name('updateSettings');
 
 
+
+
+
+     Route::get('service-images', 'ServiceImagesController@index')->name(
+            'servicesImages'
+        );
+        // // create
+        Route::get('create-service-images','ServiceImagesController@create')->name('createServiceImage');
+        // // store
+        Route::post(
+            'store-service-images',
+            'ServiceImagesController@store'
+        )->name('imageStore');
+        // // edit
+        Route::get(
+            'edit-service-images-{id}',
+            'ServiceImagesController@edit'
+        )->name('editServiceImage');
+        // // update
+        Route::post('update-services-image-{id}',
+            'ServiceImagesController@update'
+        )->name('updateImage');
+ Route::post('delete-services-image-{id}',
+            'ServiceImagesController@delete'
+        )->name('deleteImage');
+
    ############# HomeSlider #######################################
         // list
         Route::get('home-slider', 'HomeSliderController@index')->name(
@@ -105,8 +131,8 @@ Route::post('/section-two/update','SectionsController@update_section_two')->name
 
         // store
         Route::post(
-            'store-portfolio-image',
-            'PortfolioController@store_image'
+            '/store-portfolio-image',
+            'PortfolioController@storeImage'
         )->name('storePortfolioImage');
         // edit
 
@@ -127,30 +153,9 @@ Route::post('/section-two/update','SectionsController@update_section_two')->name
       
 
         ############# Services images #######################################
-        Route::get('/service-images', 'ServicerCardController@index')->name(
-            'servicesImages'
-        );
-        // // create
-        Route::get('/create','ServicerCardController@create')->name('createrviceImage');
-        // // store
-        Route::post(
-            '/store',
-            'ServicerCardController@store'
-        )->name('storeServiceImage');
-        // // edit
-        Route::get(
-            'edit/{id}',
-            'ServicerCardController@edit'
-        )->name('editServiceImage');
-        // // update
-        Route::post(
-            'update-services-image-{id}',
-            'ServicerCardController@update'
-        )->name('updateServiceImage');
-
+      
         ############# Services images #######################################
-    }
-);
+    });
 
 Auth::routes();
 
@@ -159,5 +164,7 @@ Auth::routes();
 ############# Frontend #######################################
 
 Route::get('/', 'PagesController@home')->name('home_path');
+
+
 Route::post('get-in-touch','PagesController@getContactForm')->name('contactStore');
 ############# Frontend #######################################

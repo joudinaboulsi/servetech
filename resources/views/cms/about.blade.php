@@ -13,7 +13,7 @@
                         <div class="col-md-12">
                             <form method="POST" action="{{ route('update_path') }}" enctype="multipart/form-data">
                                 @csrf
-                                @method('patch')
+                                @method('post')
 
                                 <div>
                                     <label for="defaultFormControlInput" class="form-label">Title</label>
@@ -21,11 +21,12 @@
                                         value="{{ $about->title }}" aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-4">
+                                    <label for="defaultFormControlInput" class="form-label">Content One</label>
                                         <textarea class="form-control" name="content_one" aria-label="With textarea">{!! $about->content_one !!}</textarea>
                                   
                                 </div>
                                 <div class="mb-3 mt-4">
-                                  
+                                  <label for="defaultFormControlInput" class="form-label">Content Two</label>
                                         <textarea class="form-control" name="content_two" aria-label="With textarea">{!! $about->content_two !!}</textarea>
                             
                                 </div>
@@ -64,7 +65,7 @@
                                 </div>
 
                                 <div class="mb-3 mt-4">
-                                    <button type="submit" class="btn btn-outline-primary">update</button>
+                                    <button type="submit" class="btn btn-outline-primary">Save</button>
                                 </div>
                             </form>
                         </div>

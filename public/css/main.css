@@ -2736,7 +2736,9 @@ span.social-title {
     font-family: "Barlow Condensed";
     text-transform: uppercase;
     color: rgb(0, 44, 66);
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    word-wrap: break-word;
+    width: 900px;;
     text-align: inherit;
     line-height: 96px;
     letter-spacing: 0px;

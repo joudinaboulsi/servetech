@@ -10,10 +10,9 @@
 
                     <h5 class="card-header">Edit</h5>
                     <div class="card-body">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
 
-                            <form method="POST" action="{{ route('updateSectionTwo') }}"
-                                enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('updateSectionTwo') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="mb-3 mt-4">
@@ -33,10 +32,11 @@
                                         value="{{ $section->subtitle }}" aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-4">
-                                    <div class="input-group">
-                                        <span class="input-group-text">content </span>
-                                        <textarea class="form-control" name="content" aria-label="With textarea">{!! $section->content !!}</textarea>
-                                    </div>
+
+                                    <label for="defaultFormControlInput" class="form-label">Content</label>
+
+                                    <textarea class="form-control" name="content" aria-label="With textarea">{!! $section->content !!}</textarea>
+
                                 </div>
                                 <div class="mb-3 mt-4">
                                     <label for="defaultFormControlInput" class="form-label">link</label>

@@ -48,7 +48,7 @@ class PortfolioController extends Controller
     }
 
     // store
-    public function store_image(Request $request)
+    public function storeImage(Request $request)
     {
         $newPhoto = '';
         if ($request->hasFile('image')) {

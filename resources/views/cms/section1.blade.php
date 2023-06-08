@@ -10,7 +10,7 @@
 
                     <h5 class="card-header">Edit</h5>
                     <div class="card-body">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
 
                             <form method="POST" action="{{ route('updateSectionOne') }}"
                                 enctype="multipart/form-data">
@@ -58,14 +58,14 @@
                                 <div>
                                     <label for="defaultFormControlInput" class="form-label">Counter Title</label>
                                     <input type="text" name="counter_title" class="form-control"
-                                        id="defaultFormControlInput" placeholder="Title"
+                                        id="defaultFormControlInput" value="{{$section->counter_title}}"
                                         aria-describedby="defaultFormControlHelp" />
                                 </div>
 
                                 <div class="mb-3 mt-3">
                                     <label for="html5-number-input" class="col-md-2 col-form-label">Number</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="number" name="counter" value="0"
+                                        <input class="form-control" type="number" name="counter" value="{{$section->counter}}"
                                             id="html5-number-input" />
                                     </div>
                                 </div>
