@@ -8,40 +8,53 @@
             <div class="col">
                 <div class="card mb-4">
 
-                    <h5 class="card-header">Create</h5>
+                    <h5 class="card-header">Edit</h5>
                     <div class="card-body">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
 
-                            <form method="POST" action="{{ route('storeAbout') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('updateSectionOne') }}"
+                                enctype="multipart/form-data">
                                 @csrf
 
                                 <div>
                                     <label for="defaultFormControlInput" class="form-label">Title</label>
                                     <input type="text" name="title" class="form-control" id="defaultFormControlInput"
-                                        placeholder="Title" aria-describedby="defaultFormControlHelp" />
+                                        value="{{ $section->title }}" aria-describedby="defaultFormControlHelp" />
+                                </div>
+                                <div>
+                                    <label for="defaultFormControlInput" class="form-label">Subtitle</label>
+                                    <input type="text" name="subtitle" class="form-control" id="defaultFormControlInput"
+                                        value="{{ $section->subtitle }}"aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-4">
-                                  
-                                 
-                                        <textarea class="form-control" name="content_one" placeholder="Content one" id="editor1"></textarea>
-                                  
+                                    <label for="defaultFormControlInput" class="form-label">Link 1</label>
+                                    <input type="text" name="link_one" class="form-control" id="defaultFormControlInput"
+                                        value="{{ $section->link_one }}"aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-4">
-                                
-                                     
-                                        <textarea class="form-control" name="content_two" aria-label="With textarea" placeholder="Content two" id="editor"></textarea>
-                                   
+                                    <label for="defaultFormControlInput" class="form-label">Link</label>
+                                    <input type="text" name="link_two" class="form-control" id="defaultFormControlInput"
+                                        value="{{ $section->link_two }}"aria-describedby="defaultFormControlHelp" />
                                 </div>
 
                                 <div class="mb-3 mt-4">
                                     <label for="formFile" class="form-label">Image</label>
-                                    <input class="form-control" type="file" name="image" id="formFile" />
+                                    <div class="mb-3 mt-4">
+                                        @if ($section->image_one)
+                                            <img src="../assets/img/section1/{{ $section->image_one }}" width="100">
+                                        @endif
+                                    </div>
+                                    <input class="form-control" type="file" name="image_one" id="formFile" />
                                 </div>
                                 <div class="mb-3 mt-4">
                                     <label for="formFile" class="form-label">logo</label>
+                                    <div class="mb-3 mt-4">
+                                        @if ($section->logo)
+                                            <img src="../assets/img/logo/{{ $section->logo }}" width="100">
+                                        @endif
+                                    </div>
                                     <input class="form-control" type="file" name="logo" id="formFile" />
                                 </div>
-                                
                                 <div>
                                     <label for="defaultFormControlInput" class="form-label">Counter Title</label>
                                     <input type="text" name="counter_title" class="form-control"
@@ -69,7 +82,7 @@
 
 
 
+
         </div>
     </div>
-
 @endsection

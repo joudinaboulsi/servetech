@@ -13,43 +13,14 @@ class PortfolioController extends Controller
     //
     public function index()
     {
-        $portfioPage = PortfolioPage::all();
-        return view('cms.portfolio_page.index', compact('portfioPage'));
+        $portfolio = PortfolioPage::where('id','1')->first();
+        return view('cms.portfolio_page', compact('portfolio'));
     }
-    // create
-    public function create()
+  
+
+    public function update(Request $request)
     {
-        return view('cms.portfolio_page.create');
-    }
-
-    // store
-    public function store(Request $request)
-    {
-        PortfolioPage::insert([
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
-        ]);
-
-        toastr()->success('Data has been saved  successfully!');
-
-        return redirect()->route('portfolioPage');
-    }
-
-    // edit
-    public function edit($id)
-    {
-        $portfolio = PortfolioPage::findOrFail($id);
-        if (!$portfolio) {
-            toastr()->error('Something went wrong');
-
-            return redirect()->route('portfolioPage');
-        }
-        return view('cms.portfolio_page.edit', compact('portfolio'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        PortfolioPage::where('id', $id)->update([
+        PortfolioPage::where('id','1')->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
         ]);
@@ -103,12 +74,8 @@ class PortfolioController extends Controller
     // edit
     public function edit_image($id)
     {
-        $pImage = PortfolioImage::findOrFail($id);
-        if (!$pImage) {
-            toastr()->error('Something went wrong');
-
-            return redirect()->route('PortfolioImage');
-        }
+        $pImage = PortfolioImage::where('id',$id)->first();
+     
         return view('cms.portfolio_image.edit', compact('pImage'));
     }
 
@@ -135,5 +102,14 @@ class PortfolioController extends Controller
 
         toastr()->success('Data has been updated successfully!');
         return redirect()->route('PortfolioImage');
+    }
+
+
+  
+      public function delete_image($id)
+    {
+       PortfolioImage::find($id)->delete();
+        toastr()->success('Data has been deleted successfully!');
+         return redirect()->route('PortfolioImage');
     }
 }

@@ -87,4 +87,12 @@ class HomeSliderController extends Controller
 
         return redirect()->route('homeSlider');
     }
+
+    // delete
+     public function destroy($id)
+    {
+       HomeSlider::find($id)->delete();
+        toastr()->success('Data has been deleted successfully!');
+         return redirect()->route('homeSlider');
+    }
 }

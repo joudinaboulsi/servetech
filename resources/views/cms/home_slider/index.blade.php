@@ -1,7 +1,7 @@
 @extends('cms.layouts.app')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+      
 
         <!-- Basic Bootstrap Table -->
         <div class="card">
@@ -31,7 +31,7 @@
                                 @foreach ($home_sliders as $home_slider)
                                     <tr>
                                         <td>{{ $home_slider->title }}</td>
-                                        <td>{!! $home_slider->content  !!}</td>
+                                        <td>{{ $home_slider->content }}</td>
                                         <td>{{ $home_slider->subtitle }}</td>
 
                                         <td>
@@ -41,10 +41,17 @@
                                             @endif
                                         </td>
                                         <td>{{ $home_slider->link }}</td>
-                                        <td>
+                                        <td style="display:flex;">
                                             <a class="btn btn-outline-dark"
                                                 href="{{ route('editHomeSlider', $home_slider->id) }}">Edit</a>
-                                            
+                                              
+                                             
+                                               <form method="post" action="{{route('deleteHomeSlider', $home_slider->id)}}">
+                                                        @method('delete')
+                                                        @csrf
+                                                <button type="submit" class="btn btn-outline-danger" style=" margin:0 5px">Delete</button>
+                                                </form>
+                                        
                                         </td>
                                     </tr>
                                 @endforeach
@@ -54,4 +61,6 @@
                 </div>
                 <!--/ Basic Bootstrap Table -->
             </div>
+
+         
         @endsection

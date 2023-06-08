@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="col-md-6">
 
-                            <form method="POST" action="{{ route('updateSectionTwo', $section->id) }}"
+                            <form method="POST" action="{{ route('updateSectionTwo') }}"
                                 enctype="multipart/form-data">
                                 @csrf
 

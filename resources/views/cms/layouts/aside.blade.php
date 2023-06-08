@@ -15,18 +15,18 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        {{-- <li class="menu-item active">
             <a href="{{ route('admin') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Layouts -->
         <li class="menu-item">
-            <a href="{{ route('pages') }}" class="menu-link">
+            <a href="{{ route('admin') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Pages & SEO</div>
+                <div data-i18n="Layouts">SEO</div>
             </a>
         </li>
 
@@ -34,47 +34,47 @@
             <span class="menu-header-text">Pages</span>
         </li>
         <li class="menu-item">
-            <a href="{{ route('homeSlider') }}" class="menu-link">
+            <a href="{{route('homeSlider')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Home Slider</div>
+                <div data-i18n="Account Settings">Slider</div>
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ route('about') }}" class="menu-link">
+            <a href="{{route('about_path')}}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">About</div>
             </a>
 
         </li>
         <li class="menu-item">
-            <a href="{{ route('clients') }}" class="menu-link">
+            <a href="{{route('clients')}}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Clients</div>
             </a>
         </li>
 
         <li class="menu-item">
-            <a href="{{ route('SectionOne') }}" class="menu-link">
+            <a href="{{route('admin-section-one')}}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Section One</div>
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ route('SectionTwo') }}" class="menu-link">
+            <a href="{{route('admin-section-two')}}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Section Two</div>
             </a>
 
         </li>
         <li class="menu-item">
-            <a href="{{ route('portfolioPage') }}" class="menu-link">
+            <a href="{{route('portfolioPage')}}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Portfolio</div>
             </a>
 
         </li>
         <li class="menu-item">
-            <a href="{{ route('PortfolioImage') }}" class="menu-link">
+            <a href="{{route('PortfolioImage')}}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Authentications">Portfilio Images</div>
             </a>
@@ -87,12 +87,12 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ route('services') }}" class="menu-link">
+                    <a href="{{route('services')}}" class="menu-link">
                         <div data-i18n="Error">Service Page</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{route('servicesImages')}}" class="menu-link">
+                    <a href="" class="menu-link">
                         <div data-i18n="Under Maintenance">Services</div>
                     </a>
                 </li>
@@ -102,14 +102,14 @@
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->
         <li class="menu-item">
-            <a href="{{ route('contact') }}" class="menu-link">
+            <a href="{{route('contact')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Contact</div>
             </a>
         </li>
         <!-- User interface -->
         <li class="menu-item">
-            <a href="{{ route('footer') }}" class="menu-link">
+            <a href="{{route('footer')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
                 <div data-i18n="User interface">Footer Section </div>
             </a>
@@ -118,7 +118,7 @@
 
         <!-- Extended components -->
         <li class="menu-item">
-            <a href="{{ route('settings') }}" class="menu-link">
+            <a href="{{route('settings')}}" class="menu-link">
                    <i class="bx bx-cog me-2"></i>
                 <div data-i18n="Extended UI">Settings</div>
             </a>

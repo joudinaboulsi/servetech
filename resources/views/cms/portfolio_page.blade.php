@@ -7,25 +7,26 @@
 
             <div class="col">
                 <div class="card mb-4">
-                    <h5 class="card-header">Add Portfolio section</h5>
+                    <h5 class="card-header">Edit Portfolio section</h5>
                     <div class="card-body">
                         <div class="col-md-6">
 
-                            <form method="POST" action="{{ route('storeportfolioPage') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('updateportfolioPage') }}"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3 mt-3">
                                     <label for="defaultFormControlInput" class="form-label">Title </label>
                                     <input type="text" name="title" class="form-control" id="defaultFormControlInput"
-                                        placeholder="Title" aria-describedby="defaultFormControlHelp" />
+                                        value="{{ $portfolio->title }}" aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-3">
                                     <label for="defaultFormControlInput" class="form-label">Subtitle</label>
                                     <input type="text" name="subtitle" class="form-control" id="defaultFormControlInput"
-                                        placeholder="Subtitle" aria-describedby="defaultFormControlHelp" />
+                                        value="{{ $portfolio->subtitle }}" aria-describedby="defaultFormControlHelp" />
                                 </div>
 
                                 <div class="mb-3 mt-4">
-                                    <button type="submit" class="btn btn-outline-primary">Save</button>
+                                    <button type="submit" class="btn btn-outline-primary">update</button>
                                 </div>
                             </form>
                         </div>

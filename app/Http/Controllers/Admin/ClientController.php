@@ -79,4 +79,12 @@ class ClientController extends Controller
         toastr()->success('Data has been updated successfully!');
         return redirect()->route('clients');
     }
+
+
+      public function delete($id)
+    {
+       CLient::find($id)->delete();
+        toastr()->success('Data has been deleted successfully!');
+         return redirect()->route('clients');
+    }
 }

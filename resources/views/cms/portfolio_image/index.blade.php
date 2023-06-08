@@ -37,10 +37,16 @@
                                                     width="100">
                                             @endif
                                         </td>
-                                        <td>
+                                        <td style="display:flex">
                                             <a class="btn btn-outline-dark"
-                                                href="{{ route('editPortfolioImage', $portfolio_image->id) }}">Edit</a>
+                                                href="{{ route('editImage', $portfolio_image->id) }}">Edit</a>
 
+
+                                                 <form  action="{{route('deletePortfolioImage', $portfolio_image->id)}}" method="POST">
+                                                        
+                                                        @csrf
+                                                <button type="submit" class="btn btn-outline-danger" style=" margin:0 5px">Delete</button>
+                                                </form>
                                         </td>
                                     </tr>
                                 @endforeach

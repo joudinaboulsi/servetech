@@ -21,11 +21,10 @@
                                     <input type="text" name="title" class="form-control" id="defaultFormControlInput"
                                         value="{{ $home->title }}" aria-describedby="defaultFormControlHelp" />
                                 </div>
-                                <div class="mb-3 mt-4">
-                                    
-                                   
-                                        <textarea class="form-control" name="content" aria-label="With textarea"> {!! $home->content !!}</textarea>
-                               
+                                  <div class="mb-3 mt-4 col-12">
+                                    <label for="defaultFormControlInput" class="form-label">Content</label>
+                                    <input type="text" name="content" class="form-control" id="defaultFormControlInput"
+                                        value="{{ $home->content }}" aria-describedby="defaultFormControlHelp" />
                                 </div>
 
                                 <div>

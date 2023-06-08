@@ -7,17 +7,17 @@
             <div class="col">
                 <div class="card mb-4">
 
-                    <h5 class="card-header">Create Page</h5>
+                    <h5 class="card-header">SEO</h5>
                     <div class="card-body">
                         <div class="col-md-12">
 
-                            <form method="POST" action="{{route('update_page',$page->id)}}" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('adminSeo')}}" enctype="multipart/form-data">
                                 @csrf
 
                                  <div class="mb-3 mt-4">
                                     <label for="defaultFormControlInput" class="form-label">name</label>
-                                    <input type="text" name="page_name" class="form-control" id="defaultFormControlInput"
-                                    value="{{$page->page_name}}" aria-describedby="defaultFormControlHelp" />
+                                    <input type="text" name="name" class="form-control" id="defaultFormControlInput"
+                                    value="{{$page->name}}" aria-describedby="defaultFormControlHelp" />
                                 </div>
                                  <div class="mb-3 mt-4">
                                     <label for="defaultFormControlInput" class="form-label">Meta title</label>

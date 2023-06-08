@@ -21,6 +21,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
+    <link href="../assets/css/sweetalert.css" rel="stylesheet" type="text/css" />
+
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
@@ -61,7 +63,7 @@
             <div class="layout-page">
                 <!-- Navbar -->
 
-                @include('cms.layouts.header')
+                {{-- @include('cms.layouts.header') --}}
 
                 <!-- / Navbar -->
 
@@ -111,9 +113,11 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="../assets/js/sweetalert.min.js" type="text/javascript"></script>
 
     
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="text/javascript" src="../assets/js/custom-functions.js"></script>
 
 <script>
   tinymce.init({

@@ -141,7 +141,7 @@
                                                {{$slide->title}}
                                             </h3>
                                             <h2 data-animation="fadeInUp" data-delay="0.5s">
-                                               {!!$slide->content !!}
+                                               {{$slide->content}}
                                             </h2>
                                             <p data-animation="fadeInUp" data-delay="0.7s" class="">
                                                {{$slide->subtitle}}

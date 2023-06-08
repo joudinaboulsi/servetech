@@ -13,48 +13,16 @@ class ContactController extends Controller
     //index
     public function index()
     {
-        $contacts = Contact::all();
-        return view('cms.contact.index', compact('contacts'));
+        $contact = Contact::where('id','1')->first();
+        return view('cms.contact', compact('contact'));
     }
 
-    // create  section
-    public function create()
-    {
-        return view('cms.contact.create');
-    }
 
-    // store  section
-    public function store(Request $request)
-    {
-        Contact::insert([
-            'title' => $request->title,
-            'title_contact' => $request->title_contact,
-            'title_address' => $request->title_address,
-            'title_working' => $request->title_working,
-            'title_message' => $request->title_message,
-            'map' => $request->map,
-        ]);
-
-        toastr()->success('Data has been saved successfully!');
-        return redirect()->route('contact');
-    }
-
-    // edit section
-    public function edit($id)
-    {
-        $contact = Contact::findOrFail($id);
-        if (!$contact) {
-            toastr()->error('Something went wrong');
-
-            return redirect()->route('contact');
-        }
-        return view('cms.contact.edit', compact('contact'));
-    }
 
     // update section
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $contact = Contact::where('id', $id)->update([
+        $contact = Contact::where('id','1')->update([
             'title' => $request->title,
             'title_contact' => $request->title_contact,
             'title_address' => $request->title_address,

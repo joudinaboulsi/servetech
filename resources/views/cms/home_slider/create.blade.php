@@ -15,16 +15,15 @@
                             <form method="POST" action="{{ route('storeHomeSlider') }}" enctype="multipart/form-data">
                                 @csrf
 
-                                <div>
+                             <div class="mb-3 mt-4 col-12">
                                     <label for="defaultFormControlInput" class="form-label">Title</label>
                                     <input type="text" name="title" class="form-control" id="defaultFormControlInput"
                                         placeholder="Title" aria-describedby="defaultFormControlHelp" />
                                 </div>
                                 <div class="mb-3 mt-4 col-12">
-                               
-                                  
-                                        <textarea class="form-control" name="content" id="editor" aria-label="With textarea" placeholder="Content"></textarea>
-                                    
+                                    <label for="defaultFormControlInput" class="form-label">Content</label>
+                                    <input type="text" name="content" class="form-control" id="defaultFormControlInput"
+                                        placeholder="Title" aria-describedby="defaultFormControlHelp" />
                                 </div>
  
                                 <div>

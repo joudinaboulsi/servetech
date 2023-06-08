@@ -9,7 +9,7 @@
                     <h5 class="card-header">Edit </h5>
                     <div class="card-body">
 
-                        <form method="POST" action="{{ route('updateContact', $contact->id) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('updateContact') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 

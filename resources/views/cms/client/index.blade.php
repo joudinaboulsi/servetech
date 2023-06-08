@@ -39,9 +39,16 @@
                                                 <img src="../assets/img/client/{{ $client->image }}" width="100">
                                             @endif
                                         </td>
-                                        <td>
+                                        <td style="display:flex;">
                                             <a href="{{ route('editClient', $client->id) }}"
                                                 class="btn btn-outline-dark">Edit </a>
+
+
+                                                 <form  action="{{route('deleteClient', $client->id)}}" method="POST">
+                                                        
+                                                        @csrf
+                                                <button type="submit" class="btn btn-outline-danger" style=" margin:0 5px">Delete</button>
+                                                </form>
                                         </td>
                                     </tr>
                                 @endforeach
