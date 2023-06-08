@@ -14,11 +14,11 @@
                             <form method="POST" action="{{route('adminSeo')}}" enctype="multipart/form-data">
                                 @csrf
 
-                                 <div class="mb-3 mt-4">
+                                 {{-- <div class="mb-3 mt-4">
                                     <label for="defaultFormControlInput" class="form-label">name</label>
                                     <input type="text" name="name" class="form-control" id="defaultFormControlInput"
                                     value="{{$page->name}}" aria-describedby="defaultFormControlHelp" />
-                                </div>
+                                </div> --}}
                                  <div class="mb-3 mt-4">
                                     <label for="defaultFormControlInput" class="form-label">Meta title</label>
                                     <input type="text" name="meta_title" class="form-control" id="defaultFormControlInput"
